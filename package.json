@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/derek-haworth/bamazon.git"
   },
-  "keywords": [],
+  "keywords": [
+    "javascript",
+    "node",
+    "mysql"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -18,6 +22,7 @@
   },
   "homepage": "https://github.com/derek-haworth/bamazon#readme",
   "dependencies": {
+    "cli-table": "^0.3.1",
     "inquirer": "^5.1.0",
     "mysql": "^2.15.0"
   }
