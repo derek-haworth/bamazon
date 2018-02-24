@@ -13,7 +13,7 @@ var prompt = inquirer.createPromptModule();
 			// loop through the list of items and display to the screen
 			var data_length = data.length;
 			for (var i = 0; i < data_length; i++) {
-				console.log('  ' + data[i].item_id + ' "' + data[i].product_name + '" FORMAT: ' + data[i].department_name + ' - PRICE: $' + data[i].price + ' - Qty: ' + data[i].stock_quantity + '\n');
+				console.log('  ' + data[i].item_id + ' "' + data[i].product_name + '" DEPT: ' + data[i].department_name + ' - PRICE: $' + data[i].price + ' - Qty: ' + data[i].stock_quantity + '\n');
 			}
 
 			// call the selectProduct function here so that 
