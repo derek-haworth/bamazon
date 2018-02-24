@@ -7,11 +7,11 @@ USE bamazon;
 
 -- Products Table
 CREATE TABLE products (
-  item_id INT NOT NULL,
+  item_id INT AUTO_INCREMENT NOT NULL,
   product_name VARCHAR(100) NULL,
   department_name VARCHAR(50) NULL,
   price DECIMAL(10,4) NULL,
-  stock_quantity INT NULL
+  stock_quantity INT NULL,
   PRIMARY KEY (item_id)
 );
 
@@ -51,10 +51,10 @@ INSERT INTO departments
 	(department_name, over_head_costs, total_sales)
 VALUES
 	("kitchen", 3500.00, 0.00),
-    ("outdoor", 350.00, 0.00);
-    ("living", 350.00, 0.00);
-    ("tech", 1000.00, 0.00);
-    ("bathroom", 350.00, 0.00);
+    ("outdoor", 350.00, 0.00),
+    ("living", 350.00, 0.00),
+    ("tech", 1000.00, 0.00),
+    ("bathroom", 350.00, 0.00),
     ("appliances", 350.00, 0.00);
     
 DROP TABLE departments;
