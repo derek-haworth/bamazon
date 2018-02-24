@@ -122,7 +122,7 @@ var prompt = inquirer.createPromptModule();
 			
     		var query = 'UPDATE products SET stock_quantity = stock_quantity + ? WHERE item_id = ?';
 
-    		// update the Products table with the new stock_1uantity for the purchased item
+    		// update the Products table with the new stock_quantity for the purchased item
     		connect.connection.query(query, [amount_int, item_int], function(err, data) {
 
 				if (err) throw err;

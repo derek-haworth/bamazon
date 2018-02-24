@@ -75,7 +75,7 @@ var Table = require('cli-table');
 				// push that profit amount into the table data array to populate that last column.
 				table_data.push(total_profit.toFixed(2));
 
-				// push all the data to the cli-table table()
+				// push all the data to the cli-table table
 				table.push(table_data);
 
 				// reset the table data to an empty string so we add data to a new array each time we loop through a new object
