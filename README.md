@@ -12,13 +12,13 @@ You will also need to setup a MySQL database on your local and update `mysql.js`
 
 
 ### Customer View
-Run command `node bamazonCustomer.js`
+Run command `node bamazonCustomer.js` <br>
 ![Bamazon Customer Demo](images/bamazon_customer.gif)
 
 ### Manager View
-Run command `node bamazonManager.js`
+Run command `node bamazonManager.js` <br>
 ![Bamazon Manager Demo](images/bamazon_manager.gif)
 
 ### Supervisor View
-Run command `node bamazonSupervisor.js`
-![Bamazon Supervisor Demo](images/bamazon_supervisor.jpg)
+Run command `node bamazonSupervisor.js` <br>
+![Bamazon Supervisor Demo](images/bamazon_supervisor.gif)
