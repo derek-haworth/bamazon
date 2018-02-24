@@ -17,7 +17,8 @@ var prompt = inquirer.createPromptModule();
 				console.log('  ' + data[i].ItemID + ' "' + data[i].ProductName + '" FORMAT: ' + data[i].DepartmentName + ' - PRICE: $' + data[i].Price + ' - Qty: ' + data[i].StockQuantity + '\n');
 			}
 
-			// call the selectProduct function here so that it's called once the products have been displayed
+			// call the selectProduct function here so that 
+			// it's called once the products have been displayed
 			selectProduct();
 			
 		}); 
@@ -54,7 +55,52 @@ var prompt = inquirer.createPromptModule();
 		// pass the id and amount to the purchaseProduct function to complete the transaction
 		}]).then(function(answer) {
 
-			// call the purchaseProduct() function
+			purchaseProduct(answer);
 		
 		}); 
 	} 
+
+	// check the inventory and purchase the product with the itemID and amount to purchase
+	function purchaseProduct(selected_item) {
+
+		selected_item_int = parseInt(selected_item.amount);
+		
+		var query_select = 'SELECT * FROM products WHERE ?';
+
+        connect.connection.query(query_select, {ItemID: selected_item.id}, function(err_select, data_select) {
+
+			if (err_select) throw err_select;
+            
+            // check if the amount in stock is less than the selected amount
+        	if (data_select[0].StockQuantity < selected_item_int) {
+
+        		console.log('\nSorry, but you selected to purchase more than we have in stock. Please look over our products and make another selection.\n');
+
+        		// start the process over 
+        		selectProduct();
+
+        	} else {
+
+        		var new_quantity = data_select[0].StockQuantity - selected_item_int;
+
+        		// store the price paid into a variable
+        		var total_price = data_select[0].Price * selected_item_int;
+
+        		var query_update = 'UPDATE products p, departments d SET p.stock_quantity = ?, d.total_sales = d.total_sales + ? WHERE p.item_id = ? AND d.department_name = ?';
+
+        		// update the Products table with the new stock_quantity for the purchased item
+        		connect.connection.query(query_update, [new_quantity, total_price, data_select[0].ItemID, data_select[0].DepartmentName], function(err_update, data_update) {
+
+					if (err_update) throw err_update;
+
+        		});
+
+        		console.log('\nThank you for your purchase. Total price is $' + total_price + '\n');
+
+        		// start the process over and display the products
+        		displayProducts();
+        	}
+        });
+	} 
+
+	displayProducts();
