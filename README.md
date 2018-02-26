@@ -2,7 +2,7 @@
 A command-line-interface node application that acts like an amazon storefront. The app will take in orders from customers and deplete stock from the store's inventory. It also tracks sales across the store's departments and then provides a summary of the highest-grossing departments in the store.
 
 ## How does it work?
-Bamazon uses nodeJS and functions under a CLI-only; there is no deployment or GUI. It uses a series of MySQL calls to manage the localhost database, update records, join tables, and calculate additional data in real-time. User input is handled by the Inquirer npm; database calls are handled by the MySQL node package.
+Bamazon uses nodeJS and functions under a CLI-only; there is no deployment or GUI. It uses a series of MySQL calls to manage the localhost database, update records, join tables, and calculate additional data in real-time. User input is handled by the `Inquirer npm`; database calls are handled by the `MySQL npm`.
 
 ## How can I use the app?
 `Node` is required to run this app. After downloading the repository, run `npm install` from the command line to ensure you have the necessary packages included in the package.json file (mysql & inquirer).
