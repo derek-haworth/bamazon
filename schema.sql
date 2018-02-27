@@ -19,9 +19,9 @@ INSERT INTO products
 	(product_name, department_name, price, stock_quantity)
 VALUES 
 	("pillow", "living", 9.95, 39),
-    ("bowls", "kitchen", 7.25, 67),
-    ("microwave", "appliances", 129.99, 12),
-    ("toaster", "appliances", 19.99, 20),
+  ("bowls", "kitchen", 7.25, 67),
+  ("microwave", "appliances", 129.99, 12),
+  ("toaster", "appliances", 19.99, 20),
 	("sheets", "bedroom", 45.00, 3),
 	("silverware", "kitchen", 52.88, 20),
 	("lawnmower", "outdoor", 199.88, 4),
@@ -31,11 +31,11 @@ VALUES
 	("lamp", "living", 69.00, 3);
 	
 
-DROP TABLE products;  
+-- DROP TABLE products;  
 
-SELECT * from products;
+-- SELECT * from products;
 
-UPDATE products SET price = 12.50 WHERE item_id = 11;
+-- UPDATE products SET price = 12.50 WHERE item_id = 11;
 
 -- Departments Table
 CREATE TABLE departments (
@@ -57,8 +57,8 @@ VALUES
     ("bathroom", 350.00, 0.00),
     ("appliances", 350.00, 0.00);
     
-DROP TABLE departments;
+-- DROP TABLE departments;
     
-SELECT * from departments;
+-- SELECT * from departments;
 
-DELETE from departments WHERE department_name is NULL;
+-- DELETE from departments WHERE department_name is NULL;
